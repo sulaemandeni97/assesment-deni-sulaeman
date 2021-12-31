@@ -2,7 +2,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import Home from "../views/Home.vue";
 import ListMovie from "../views/list-movie/ListMovie.vue";
 import DetailMovie from "../views/detail-movie/Detail.vue";
-
+import PlayMovie from "../views/play-movie/PlayMovie.vue";
 const routes = [
   {
     path: "/list-movie",
@@ -20,6 +20,12 @@ const routes = [
     path: "/detail-movie",
     name: "detail-movie",
     component: DetailMovie,
+    meta: {},
+  },
+  {
+    path: "/play-movie",
+    name: "play-movie",
+    component: PlayMovie,
     meta: {},
   },
 ];

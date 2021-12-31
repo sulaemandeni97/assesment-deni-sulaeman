@@ -3,7 +3,7 @@
     <div class="w-full h-screen relative">
       <img
         src="../assets/images/cover.png"
-        class="bg-black rounded w-full h-screen"
+        class="bg-black rounded w-full h-full"
         alt="..."
       />
       <div
@@ -128,14 +128,6 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  /* margin-top: 60px; */
-}
 .background-image {
   background: linear-gradient(180deg, rgba(15, 22, 29, 0.29) 0%, #0f161d 100%);
 }

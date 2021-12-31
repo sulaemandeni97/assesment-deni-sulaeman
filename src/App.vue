@@ -17,7 +17,9 @@
       backdrop-blur-[5px]
     "
   >
-    <img src="./assets/images/logo.png" alt="" class="my-6" />
+    <router-link to="/">
+      <img src="./assets/images/logo.png" alt="" class="my-6" />
+    </router-link>
     <div class="hidden md:flex" v-if="searchMovie == true">
       <form>
         <div
@@ -76,7 +78,16 @@
       </form>
     </div>
     <div
-      class="hidden md:flex justify-around align-items max-w-sm w-full h-full"
+      class="
+        hidden
+        md:flex
+        justify-around
+        align-items
+        max-w-sm
+        w-full
+        h-full
+        font-style
+      "
     >
       <div
         class="
@@ -125,7 +136,7 @@
           >
             <ul class="text-left">
               <li
-                class="w-full px-7 py-1 first:py-3 text-[20px]"
+                class="w-full px-7 py-1 text-[20px]"
                 style="font-size: 1rem; line-height: 1.5rem"
               >
                 Actions
@@ -184,7 +195,9 @@
         </div>
       </div>
       <div class="flex my-6 items-center justify-center">
-        <span class="mr-3">svg</span>
+        <span class="mr-3">
+          <img src="./assets/icons/search.svg" alt="" />
+        </span>
         <div @click="onSearch" class="cursor-pointer">Search</div>
       </div>
       <router-link class="py-6" to="/list-movie">View Plans</router-link>
@@ -253,4 +266,12 @@ export default {
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 </script>
 
-<style></style>
+<style>
+.font-style {
+  width: 50px;
+  height: 19px;
+  left: 703px;
+  top: 25px;
+  line-height: 19px;
+}
+</style>

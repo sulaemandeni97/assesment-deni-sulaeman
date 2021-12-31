@@ -1,124 +1,12 @@
 <template>
   <div class="min-h-screen w-full bg-[#0f161d]">
-    <div class="relative top-0 left-0 h-full w-screen">
-      <div
-        class="
-          background-image
-          absolute
-          top-0
-          left-0
-          bottom-0
-          h-full
-          w-full
-          rounded-[20px]
-        "
-      ></div>
-      <img
-        src="https://image.tmdb.org/t/p/original//1Rr5SrvHxMXHu5RjKpaMba8VTzi.jpg"
-        class="bg-black rounded w-full"
-        style="max-height: 717px"
-        alt="..."
-      />
-      <div
-        class="
-          absolute
-          bottom-[54px]
-          md:bottom-[140px] md:left-[108px]
-          px-3
-          z-50
-        "
-      >
-        <div
-          class="
-            text-white text-[32px]
-            leading-[37.5px]
-            md:text-[42px] md:leading-[49px] md:flex
-            mb-[22px]
-            font-black
-          "
-        >
-          Spiderman : No Way Home
-        </div>
-        <div class="flex flex-col">
-          <div
-            class="
-              mb-4
-              max-w-[522px]
-              overflow-hidden
-              leading-[18.75px]
-              order-last
-              md:order-none
-              text-left
-            "
-          >
-            <p class="text-white">
-              Peter Parker is unmasked and no longer able to separate his normal
-              life from the high-stakes of being a super-hero. When he asks for
-              help from Doctor Strange the stakes become even more dangerous,
-              forcing him to discover what it truly means to be Spider-Man.
-            </p>
-          </div>
-          <div class="mb-5 opacity-70 text-white text-left">
-            Actions, Science Fiction
-          </div>
-          <div
-            class="
-              mb-5
-              text-muted
-              flex
-              justify-start
-              items-center
-              gap-5
-              text-white
-            "
-          >
-            SVG
-          </div>
-          <!-- <div
-            class="
-              mb-[30px]
-              text-muted
-              md:flex
-              justify-start
-              items-center
-              gap-5
-              hidden
-            "
-          >
-            <div class="flex flex-row gap-1">SVG</div>
-          </div> -->
-        </div>
-        <div class="flex justify-start">
-          <router-link to="/play-movie">
-            <button
-              class="
-                w-full
-                md:w-auto
-                px-12
-                py-2.5
-                md:py-4
-                font-bold
-                text-white
-                bg-[#FF4244]
-                rounded-[10px]
-                text-[24px]
-                md:text-[32px]
-                hover:scale-105
-                active:scale-105
-                flex
-                items-center
-                justify-center
-              "
-              to="/list-movie"
-            >
-              Play Now
-              <span class="ml-4">
-                <img src="../../assets/icons/carbon_play-outline.svg" alt="" />
-              </span>
-            </button>
-          </router-link>
-        </div>
-      </div>
+    <div class="aspect-w-14 aspect-h-7">
+      <iframe
+        src="https://www.youtube.com/embed/r9jwGansp1E?autoplay=1&rel=0"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
     </div>
 
     <div
@@ -126,13 +14,32 @@
         mx-4
         md:mx-24
         text-white
-        mt-0
+        mt-5
         md:mt-5
         pb-28
         grid grid-cols-1
         md:grid-cols-2
       "
     >
+      <div>
+        <h2 class="text-[32px] md:text-[42px] font-bold text-left">
+          Productions Companies
+        </h2>
+        <div class="flex flex-col text-left">
+          <p class="max-w-[522px] mb-4 mt-4 md:mt-0 order-last md:order-first">
+            Peter Parker is unmasked and no longer able to separate his normal
+            life from the high-stakes of being a super-hero. When he asks for
+            help from Doctor Strange the stakes become even more dangerous,
+            forcing him to discover what it truly means to be Spider-Man.
+          </p>
+          <p class="text-white/70 mb-4 leading-none hidden md:block">
+            Action, Adventure, Science Fiction
+          </p>
+          <div class="flex items-center mb-4">svg</div>
+          <div class="flex align-center text-white/70">8.5</div>
+        </div>
+      </div>
+
       <div>
         <h2 class="text-[32px] md:text-[42px] font-bold text-left">Credits</h2>
         <ul>
@@ -327,25 +234,6 @@
             </div>
           </li>
         </ul>
-      </div>
-
-      <div>
-        <h2 class="text-[32px] md:text-[42px] font-bold text-left">
-          Productions Companies
-        </h2>
-        <div class="flex flex-col text-left">
-          <p class="max-w-[522px] mb-4 mt-4 md:mt-0 order-last md:order-first">
-            Peter Parker is unmasked and no longer able to separate his normal
-            life from the high-stakes of being a super-hero. When he asks for
-            help from Doctor Strange the stakes become even more dangerous,
-            forcing him to discover what it truly means to be Spider-Man.
-          </p>
-          <p class="text-white/70 mb-4 leading-none hidden md:block">
-            Action, Adventure, Science Fiction
-          </p>
-          <div class="flex items-center mb-4">svg</div>
-          <div class="flex align-center text-white/70">8.5</div>
-        </div>
       </div>
     </div>
   </div>

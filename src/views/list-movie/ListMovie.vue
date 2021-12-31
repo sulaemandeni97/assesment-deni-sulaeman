@@ -124,6 +124,7 @@
               rounded-[20px]
               flex-shrink-0
               mx-4
+              text-left
             "
             @click="onShowDetail"
             v-for="movie in tranding"
@@ -141,7 +142,7 @@
                 border-b-1
               "
             >
-              <h1 class="font-black text-[32px] mb-4">
+              <h1 class="font-black text-[32px] mb-4 font-title">
                 {{ movie.original_title }}
               </h1>
               <div class="flex flex-col">
@@ -160,10 +161,11 @@
                 <p class="text-white/70 mb-4 leading-none hidden md:block">
                   Action, Adventure, Science Fiction
                 </p>
+
                 <div class="flex items-center mb-4">
                   <span class="mr-6">
                     <img
-                      src="../../assets/icons/dolby.svg"
+                      src="../../assets/icons/dolbi-atmos.svg"
                       alt="..."
                       style="
                         width: 72px;
@@ -173,19 +175,9 @@
                       "
                       class="text-white"
                     />
-
-                    <!-- <svg
-                      width="72"
-                      height="19"
-                      viewBox="0 0 72 19"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      
-                    </svg> -->
                   </span>
                   <img
-                    src="../../assets/icons/dolby-vision-seeklogo.com.svg"
+                    src="../../assets/icons/dolby-atmos-rectangle.svg"
                     alt="..."
                     style="
                       width: 22px;
@@ -220,6 +212,15 @@
                   "
                 >
                   <router-link to="/detail-movie"> Watch Now</router-link>
+
+                  <span class="ml-4">
+                    <router-link to="/detail-movie">
+                      <img
+                        src="../../assets/icons/carbon_play-outline.svg"
+                        alt=""
+                      />
+                    </router-link>
+                  </span>
                 </button>
               </div>
             </div>
@@ -825,9 +826,9 @@ export default {
     });
 
     const onShowDetail = () => {
-      root.$router.push({
-        name: "home",
-      });
+      // root.$router.push({
+      //   name: "home",
+      // });
     };
     const onFetchRecords = () => {
       return new Promise((resolve, reject) => {
