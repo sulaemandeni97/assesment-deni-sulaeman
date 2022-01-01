@@ -57,7 +57,7 @@
                   {{ movie.overview }}
                 </p>
                 <p class="text-white/70 mb-4 leading-none hidden md:block">
-                  Action, Adventure, Science Fiction
+                  Adventure, Actions, Fantasy
                 </p>
 
                 <div class="flex items-center mb-4">
@@ -706,8 +706,6 @@ export default {
     const app = getCurrentInstance();
 
     onMounted(() => {
-      console.log(app.router);
-
       onFetchRecords();
       onFetchPopular();
       onFetchTranding();

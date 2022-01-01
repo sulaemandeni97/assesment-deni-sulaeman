@@ -13,6 +13,7 @@
           rounded-[20px]
         "
       ></div>
+
       <img
         src="https://image.tmdb.org/t/p/original//1Rr5SrvHxMXHu5RjKpaMba8VTzi.jpg"
         class="bg-black rounded w-full"
@@ -37,7 +38,7 @@
             font-black
           "
         >
-          Spiderman : No Way Home
+          {{ detail.original_title }}
         </div>
         <div class="flex flex-col">
           <div
@@ -52,10 +53,7 @@
             "
           >
             <p class="text-white">
-              Peter Parker is unmasked and no longer able to separate his normal
-              life from the high-stakes of being a super-hero. When he asks for
-              help from Doctor Strange the stakes become even more dangerous,
-              forcing him to discover what it truly means to be Spider-Man.
+              {{ detail.overview }}
             </p>
           </div>
           <div class="mb-5 opacity-70 text-white text-left">
@@ -78,19 +76,18 @@
               class="text-white"
             />
           </div>
-          <div class="flex mb-4">
-            <span class="mr-6">
-              <img
-                src="../../assets/icons/star-icon.svg"
-                alt="..."
-                style="height: 19px; viewbox: 0 0 72 19; fill: white"
-                class="text-white"
-              />
-              7.8
-            </span>
+          <div class="flex align-center text-white/70">
+            <img
+              src="../../assets/icons/star-icon.svg"
+              alt="..."
+              style="height: 19px; viewbox: 0 0 72 19; fill: white"
+              class="text-white"
+            />
+
+            <span class="ml-2"> {{ detail.vote_average }} </span>
           </div>
         </div>
-        <div class="flex justify-start">
+        <div class="flex justify-start mt-5">
           <router-link to="/play-movie">
             <button
               class="
@@ -128,8 +125,8 @@
         mx-4
         md:mx-24
         text-white
-        mt-0
-        md:mt-5
+        mt-10
+        md:mt-15
         pb-28
         grid grid-cols-1
         md:grid-cols-2
@@ -138,7 +135,13 @@
       <div>
         <h2 class="text-[32px] md:text-[42px] font-bold text-left">Credits</h2>
         <ul>
-          <li class="flex items-center mt-4">
+          <li
+            class="flex items-center mt-4"
+            v-for="credit in showMore == [false] || showMore == false
+              ? credits
+              : credits.splice(0, 5)"
+            :key="credit.id"
+          >
             <div
               class="
                 w-16
@@ -153,7 +156,9 @@
               "
             >
               <img
-                src="https://image.tmdb.org/t/p/original//1Rr5SrvHxMXHu5RjKpaMba8VTzi.jpg"
+                :src="
+                  'https://image.tmdb.org/t/p/original/' + credit.profile_path
+                "
                 alt="..."
                 class="
                   shadow
@@ -163,191 +168,46 @@
                   align-middle
                   border-none
                   ml-5
+                  mr-5
                 "
                 style="border-radius: 50px"
               />
             </div>
             <div>
               <p class="text-white text[20px] md:text-[24px] font-bold">
-                Tom Holland
+                {{ credit.original_name }}
               </p>
               <p class="text-white/70 md:text[20px]">
-                As Peter Parker / Spider-Man
-              </p>
-            </div>
-          </li>
-          <li class="flex items-center mt-4">
-            <div
-              class="
-                w-16
-                h-16
-                rounded-full
-                overflow-hidden
-                flex
-                items-center
-                justify-center
-                mr-3
-                md:mr-5
-              "
-            >
-              <img
-                src="../assets/avatars/avatar1.png"
-                alt="..."
-                class="
-                  shadow
-                  rounded-full
-                  max-w-full
-                  h-auto
-                  align-middle
-                  border-none
-                  ml-5
-                "
-                style="border-radius: 50px"
-              />
-            </div>
-            <div>
-              <p class="text-white text[20px] md:text-[24px] font-bold">
-                Tom Holland
-              </p>
-              <p class="text-white/70 md:text[20px]">
-                As Peter Parker / Spider-Man
-              </p>
-            </div>
-          </li>
-          <li class="flex items-center mt-4">
-            <div
-              class="
-                w-16
-                h-16
-                rounded-full
-                overflow-hidden
-                flex
-                items-center
-                justify-center
-                mr-3
-                md:mr-5
-              "
-            >
-              <img
-                src="../assets/avatars/avatar1.png"
-                alt="..."
-                class="
-                  shadow
-                  rounded-full
-                  max-w-full
-                  h-auto
-                  align-middle
-                  border-none
-                  ml-5
-                "
-                style="border-radius: 50px"
-              />
-            </div>
-            <div>
-              <p class="text-white text[20px] md:text-[24px] font-bold">
-                Tom Holland
-              </p>
-              <p class="text-white/70 md:text[20px]">
-                As Peter Parker / Spider-Man
-              </p>
-            </div>
-          </li>
-          <li class="flex items-center mt-4">
-            <div
-              class="
-                w-16
-                h-16
-                rounded-full
-                overflow-hidden
-                flex
-                items-center
-                justify-center
-                mr-3
-                md:mr-5
-              "
-            >
-              <img
-                src="../assets/avatars/avatar1.png"
-                alt="..."
-                class="
-                  shadow
-                  rounded-full
-                  max-w-full
-                  h-auto
-                  align-middle
-                  border-none
-                  ml-5
-                "
-                style="border-radius: 50px"
-              />
-            </div>
-            <div>
-              <p class="text-white text[20px] md:text-[24px] font-bold">
-                Tom Holland
-              </p>
-              <p class="text-white/70 md:text[20px]">
-                As Peter Parker / Spider-Man
-              </p>
-            </div>
-          </li>
-          <li class="flex items-center mt-4">
-            <div
-              class="
-                w-16
-                h-16
-                rounded-full
-                overflow-hidden
-                flex
-                items-center
-                justify-center
-                mr-3
-                md:mr-5
-              "
-            >
-              <img
-                src="../assets/avatars/avatar1.png"
-                alt="..."
-                class="
-                  shadow
-                  rounded-full
-                  max-w-full
-                  h-auto
-                  align-middle
-                  border-none
-                  ml-5
-                "
-                style="border-radius: 50px"
-              />
-            </div>
-            <div>
-              <p class="text-white text[20px] md:text-[24px] font-bold">
-                Tom Holland
-              </p>
-              <p class="text-white/70 md:text[20px]">
-                As Peter Parker / Spider-Man
+                As {{ credit.character }}
               </p>
             </div>
           </li>
         </ul>
+        <button class="text-white/70 text-[20px] mt-8" @click="onShowMore">
+          {{ showMore == true ? "See More" : "See Less" }}
+        </button>
       </div>
 
       <div>
         <h2 class="text-[32px] md:text-[42px] font-bold text-left">
           Productions Companies
         </h2>
-        <div class="flex flex-col text-left">
-          <p class="max-w-[522px] mb-4 mt-4 md:mt-0 order-last md:order-first">
-            Peter Parker is unmasked and no longer able to separate his normal
-            life from the high-stakes of being a super-hero. When he asks for
-            help from Doctor Strange the stakes become even more dangerous,
-            forcing him to discover what it truly means to be Spider-Man.
-          </p>
-          <p class="text-white/70 mb-4 leading-none hidden md:block">
-            Action, Adventure, Science Fiction
-          </p>
-          <div class="flex items-center mb-4">svg</div>
-          <div class="flex align-center text-white/70">8.5</div>
-        </div>
+        <ul>
+          <li
+            class="flex items-center mt-4"
+            v-for="product in detail.production_companies"
+            :key="product.id"
+          >
+            <div>
+              <p class="text-white text[20px] md:text-[24px] font-bold">
+                {{ product.name }}
+              </p>
+              <p class="text-white/70 md:text[20px]">
+                {{ product.origin_country }}
+              </p>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -359,11 +219,20 @@ import axios from "axios";
 
 export default {
   components: {},
-  setup() {
-    const detail = ref(null);
+  setup({ root }) {
+    const detail = ref([]);
+    const credits = ref([]);
+    const limitCredits = ref([]);
+    const showMore = ref([false]);
+
     onMounted(() => {
       onShowDetail();
+      onFetchCredits();
     });
+
+    const onShowMore = () => {
+      showMore.value = !showMore.value;
+    };
 
     const onShowDetail = () => {
       return new Promise((resolve, reject) => {
@@ -371,7 +240,19 @@ export default {
           .get(
             "https://api.themoviedb.org/3/movie/634649?api_key=30524f455f7dd9239270faa005d68374"
           )
-          .then((response) => (detail.value = response.data.results))
+          .then((response) => (detail.value = response.data))
+
+          .catch((error) => reject(error));
+      });
+    };
+
+    const onFetchCredits = () => {
+      return new Promise((resolve, reject) => {
+        axios
+          .get(
+            "https://api.themoviedb.org/3/movie/634649/credits?api_key=30524f455f7dd9239270faa005d68374"
+          )
+          .then((response) => (credits.value = response.data.cast))
 
           .catch((error) => reject(error));
       });
@@ -379,8 +260,13 @@ export default {
 
     return {
       detail,
+      credits,
+      showMore,
+      limitCredits,
 
       onShowDetail,
+      onShowMore,
+      onFetchCredits,
     };
   },
 };

@@ -105,7 +105,6 @@
       >
         <div class="h-full">
           <router-link to="/">All Genre</router-link>
-          <!-- <div>All Gendre</div> -->
         </div>
         <div
           class="
@@ -119,7 +118,14 @@
           "
         >
           <div
-            class="h-8 w-8 bg-background rotate-45 transform origin-bottom-left"
+            class="
+              h-10
+              w-8
+              bg-background
+              rotate-45
+              transform
+              origin-bottom-left
+            "
           ></div>
         </div>
         <div class="hidden group-hover:block hover:block absolute top-16">
@@ -131,33 +137,16 @@
               shadow-xl
               z-20
               overflow-y-scroll
-              max-h-[250px]
+              max-h-[199px]
             "
           >
             <ul class="text-left">
               <li
-                class="w-full px-7 py-1 text-[20px]"
-                style="font-size: 1rem; line-height: 1.5rem"
+                class="w-full px-7 py-2 text-[20px]"
+                v-for="movie in movies"
+                :key="movie.id"
               >
-                Actions
-              </li>
-              <li
-                class="w-full px-7 py-1 first:py-3 text-[20px]"
-                style="font-size: 1rem; line-height: 1.5rem"
-              >
-                Adventure
-              </li>
-              <li
-                class="w-full px-7 py-1 first:py-3 text-[20px]"
-                style="font-size: 1rem; line-height: 1.5rem"
-              >
-                Animation
-              </li>
-              <li
-                class="w-full px-7 py-1 first:py-3 text-[20px]"
-                style="font-size: 1rem; line-height: 1.5rem"
-              >
-                Comedy
+                {{ movie.name }}
               </li>
             </ul>
           </div>
@@ -237,7 +226,7 @@ export default {
     const searchMovie = ref(null);
 
     onMounted(() => {
-      // onFetchRecords();
+      onFetchRecords();
     });
 
     const onSearch = () => {
