@@ -61,32 +61,34 @@
           <div class="mb-5 opacity-70 text-white text-left">
             Actions, Science Fiction
           </div>
-          <div
-            class="
-              mb-5
-              text-muted
-              flex
-              justify-start
-              items-center
-              gap-5
-              text-white
-            "
-          >
-            SVG
+
+          <div class="flex items-center mb-4">
+            <span class="mr-6">
+              <img
+                src="../../assets/icons/dolbi-atmos.svg"
+                alt="..."
+                style="height: 19px; viewbox: 0 0 72 19; fill: white"
+                class="text-white"
+              />
+            </span>
+            <img
+              src="../../assets/icons/dolby-atmos-rectangle.svg"
+              alt="..."
+              style="width: 22px; height: 29px; viewbox: 0 0 22 29; fill: white"
+              class="text-white"
+            />
           </div>
-          <!-- <div
-            class="
-              mb-[30px]
-              text-muted
-              md:flex
-              justify-start
-              items-center
-              gap-5
-              hidden
-            "
-          >
-            <div class="flex flex-row gap-1">SVG</div>
-          </div> -->
+          <div class="flex mb-4">
+            <span class="mr-6">
+              <img
+                src="../../assets/icons/star-icon.svg"
+                alt="..."
+                style="height: 19px; viewbox: 0 0 72 19; fill: white"
+                class="text-white"
+              />
+              7.8
+            </span>
+          </div>
         </div>
         <div class="flex justify-start">
           <router-link to="/play-movie">

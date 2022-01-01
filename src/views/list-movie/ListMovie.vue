@@ -1,112 +1,10 @@
 <template>
   <div class="bg-[#0f161d]">
     <div class="w-full">
-      <!-- <div
-        class="
-          fixed
-          top-0
-          left-0
-          flex
-          align-center
-          z-20
-          w-full
-          h-[69px]
-          px-7
-          md:px-28
-          text-white
-          justify-between
-          default-bg-gradient
-          backdrop-blur-[5px]
-        "
-      >
-        <img src="../../assets/images/logo.png" alt="" class="my-6" />
-        <div
-          class="
-            hidden
-            md:flex
-            justify-around
-            align-items
-            max-w-sm
-            w-full
-            h-full
-          "
-        >
-          <div
-            class="
-              group
-              text-center
-              h-full
-              flex
-              items-center
-              align-center
-              flex-col
-              py-6
-              relative
-              cursor-pointer
-            "
-          >
-            <div class="h-full">All Genre</div>
-            <div
-              class="
-                hidden
-                group-hover:inline-block
-                w-12
-                overflow-hidden
-                absolute
-                top-8
-                mt-2
-              "
-            >
-              <div
-                class="
-                  h-8
-                  w-8
-                  bg-background
-                  rotate-45
-                  transform
-                  origin-bottom-left
-                "
-              ></div>
-            </div>
-            <div class="hidden group-hover:block hover:block absolute top-16">
-              <div
-                class="
-                  bg-background
-                  rounded-2xl
-                  w-48
-                  shadow-xl
-                  z-20
-                  overflow-y-scroll
-                  max-h-[250px]
-                "
-              >
-                <ul class="text-left"></ul>
-              </div>
-            </div>
-          </div>
-          <div class="flex my-6 items-center justify-center">
-            <span class="mr-3">svg</span>
-            Search
-          </div>
-          <span class="py-6">View Plans</span>
-        </div>
-        <div class="hidden md:flex align-center items-center bg-transparent">
-          <select
-            name=""
-            id=""
-            class="px-4 py-2 border-0 outline-none svelte-s3vvlu"
-          >
-            <option value="En">En</option>
-            <option value="Id">Id</option>
-          </select>
-        </div>
-        <div class="block md:hidden py-6"></div>
-      </div> -->
-
       <div class="pt-24 md:pt-26">
         <div
           class="
-            hide-scroll
+            scrollbar-hide
             min-w-full
             overflow-x-scroll
             flex
@@ -209,6 +107,7 @@
                     flex
                     items-center
                     justify-center
+                    z-20
                   "
                 >
                   <router-link to="/detail-movie"> Watch Now</router-link>
@@ -225,31 +124,25 @@
               </div>
             </div>
 
-            <div>
-              <div
-                class="
-                  background-image
-                  absolute
-                  top-0
-                  left-0
-                  h-full
-                  w-full
-                  rounded-[20px]
-                "
-              ></div>
-              <img
-                :src="
-                  'https://image.tmdb.org/t/p/original/' + movie.backdrop_path
-                "
-                class="bg-black rounded"
-                style="
-                  max-width: 1237px;
-                  max-height: 646px;
-                  border-radius: 20px;
-                "
-                alt="..."
-              />
-            </div>
+            <div
+              class="
+                background-image
+                absolute
+                top-0
+                left-0
+                h-full
+                w-full
+                rounded-[20px]
+              "
+            ></div>
+            <img
+              :src="
+                'https://image.tmdb.org/t/p/original/' + movie.backdrop_path
+              "
+              class="bg-black rounded"
+              style="max-width: 1237px; max-height: 646px; border-radius: 20px"
+              alt="..."
+            />
           </div>
         </div>
       </div>
@@ -297,7 +190,7 @@
 
       <div
         class="
-          hide-scroll
+          scrollbar-hide
           min-w-full
           overflow-x-scroll
           flex
@@ -339,7 +232,7 @@
 
       <div
         class="
-          hide-scroll
+          scrollbar-hide
           min-w-full
           overflow-x-scroll
           flex
@@ -367,6 +260,7 @@
               md:rounded-[40px]
             "
             :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
+            @click="onShowDetail"
           />
         </div>
       </div>
@@ -380,7 +274,7 @@
 
       <div
         class="
-          hide-scroll
+          scrollbar-hide
           min-w-full
           overflow-x-scroll
           flex
@@ -421,7 +315,7 @@
 
       <div
         class="
-          hide-scroll
+          scrollbar-hide
           min-w-full
           overflow-x-scroll
           flex
@@ -462,7 +356,7 @@
 
       <div
         class="
-          hide-scroll
+          scrollbar-hide
           min-w-full
           overflow-x-scroll
           flex
@@ -502,7 +396,7 @@
       </div>
       <div
         class="
-          hide-scroll
+          scrollbar-hide
           min-w-full
           overflow-x-scroll
           flex
@@ -543,7 +437,7 @@
 
       <div
         class="
-          hide-scroll
+          scrollbar-hide
           min-w-full
           overflow-x-scroll
           flex
@@ -583,7 +477,7 @@
       </div>
       <div
         class="
-          hide-scroll
+          scrollbar-hide
           min-w-full
           overflow-x-scroll
           flex
@@ -624,7 +518,7 @@
 
       <div
         class="
-          hide-scroll
+          scrollbar-hide
           min-w-full
           overflow-x-scroll
           flex
@@ -665,7 +559,7 @@
 
       <div
         class="
-          hide-scroll
+          scrollbar-hide
           min-w-full
           overflow-x-scroll
           flex
@@ -706,7 +600,7 @@
 
       <div
         class="
-          hide-scroll
+          scrollbar-hide
           min-w-full
           overflow-x-scroll
           flex
@@ -747,7 +641,7 @@
 
       <div
         class="
-          hide-scroll
+          scrollbar-hide
           min-w-full
           overflow-x-scroll
           flex
@@ -784,6 +678,7 @@
 <script>
 import { ref } from "@vue/reactivity";
 import { onMounted } from "@vue/runtime-core";
+import { getCurrentInstance } from "vue";
 
 import axios from "axios";
 
@@ -808,7 +703,11 @@ export default {
     const romance = ref([]);
     const popular = ref([]);
 
+    const app = getCurrentInstance();
+
     onMounted(() => {
+      console.log(app.router);
+
       onFetchRecords();
       onFetchPopular();
       onFetchTranding();
@@ -826,6 +725,8 @@ export default {
     });
 
     const onShowDetail = () => {
+      console.log("Hallo Actions");
+      console.log(root.router);
       // root.$router.push({
       //   name: "home",
       // });

@@ -206,11 +206,15 @@
       <select
         name=""
         id=""
-        class="px-4 py-2 bg-transparent border-0 outline-none"
+        class="px-4 py-2 bg-transparent border-0 outline-none bg-opacity-0"
+        style="background: transparent; -webkit-appearance: none"
       >
         <option value="En">En</option>
         <option value="Id">Id</option>
       </select>
+      <span>
+        <img src="./assets/icons/down-icon.svg" alt="" class="absolut" />
+      </span>
     </div>
     <div class="block md:hidden py-6"></div>
   </div>
