@@ -5,10 +5,10 @@
         <h3>Crime</h3>
         <div class="flex">
           <button disabled>
-            <img src="../../assets/icons/PrevIcon.svg" alt="" />
+            <img src="../../../assets/icons/PrevIcon.svg" alt="" />
           </button>
           <button class="ml-1">
-            <img src="../../assets/icons/NextIcon.svg" alt="" />
+            <img src="../../../assets/icons/NextIcon.svg" alt="" />
           </button>
         </div>
       </div>
