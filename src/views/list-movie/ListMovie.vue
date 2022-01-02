@@ -145,7 +145,6 @@
             "
             alt="..."
           />
-          <!-- style="max-width: 1237px; max-height: 646px; border-radius: 20px" -->
         </div>
       </div>
     </div>
@@ -168,682 +167,85 @@
       />
     </div>
 
-    <!-- <div class="flex flex-wrap justify-center mb-10 pt-20">
-      <img
-        src="../../assets/images/preview1.png"
-        class="bg-black rounded w-full"
-        style="max-height: 646px; max-width: 1237px"
-        alt="..."
-      />
-    </div> -->
-    <div
-      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
-      v-if="movieId !== null ? movieId == 0 : movieId == null"
-    >
-      <div class="flex items-end justify-between px-7 md:px-28 mb-6">
-        <h3>Best of all</h3>
-        <div class="flex">
-          <button disabled>
-            <img src="../../assets/icons/PrevIcon.svg" alt="" />
-          </button>
-          <button class="ml-1">
-            <img src="../../assets/icons/NextIcon.svg" alt="" />
-          </button>
-        </div>
-      </div>
-
-      <div
-        class="
-          scrollbar-hide
-          min-w-full
-          overflow-x-scroll
-          flex
-          align-center
-          snap-x snap-mandatory
-        "
-      >
-        <div
-          class="
-            mx-2
-            md:mx-5
-            min-w-fit
-            first:ml-7 first:md:ml-28
-            last:mr-7 last:md:mr-28
-          "
-          v-for="movie in popular"
-          :key="movie.id"
-        >
-          <img
-            class="
-              w-[126px]
-              h-[189px]
-              md:w-[269px] md:h-[403px]
-              rounded-xl
-              md:rounded-[40px]
-            "
-            :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
-            @click="onShowDetail(movie.id)"
-          />
-        </div>
-      </div>
+    <div v-if="movieId !== null ? movieId == 0 : movieId == null">
+      <best-movie />
     </div>
 
-    <!-- Image 2 -->
-
-    <div
-      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
-      v-if="movieId !== null ? movieId == 28 : movieId == null"
-    >
-      <div class="flex items-end justify-between px-7 md:px-28 mb-6">
-        <h3>Action</h3>
-        <div class="flex">
-          <button disabled>
-            <img src="../../assets/icons/PrevIcon.svg" alt="" />
-          </button>
-          <button class="ml-1">
-            <img src="../../assets/icons/NextIcon.svg" alt="" />
-          </button>
-        </div>
-      </div>
-
-      <div
-        class="
-          scrollbar-hide
-          min-w-full
-          overflow-x-scroll
-          flex
-          align-center
-          snap-x snap-mandatory
-        "
-      >
-        <div
-          class="
-            mx-2
-            md:mx-5
-            min-w-fit
-            first:ml-7 first:md:ml-28
-            last:mr-7 last:md:mr-28
-          "
-          v-for="movie in action"
-          :key="movie.id"
-        >
-          <img
-            class="
-              w-[126px]
-              h-[189px]
-              md:w-[269px] md:h-[403px]
-              rounded-xl
-              md:rounded-[40px]
-            "
-            :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
-            @click="onShowDetail(movie.id)"
-          />
-        </div>
-      </div>
+    <div v-if="movieId !== null ? movieId == 28 : movieId == null">
+      <action />
     </div>
 
-    <!-- adventure, -->
-    <div
-      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
-      v-if="movieId !== null ? movieId == 12 : movieId == null"
-    >
-      <div class="flex items-end justify-between px-7 md:px-28 mb-6">
-        <h3>Adventure</h3>
-        <div class="flex">
-          <button disabled>
-            <img src="../../assets/icons/PrevIcon.svg" alt="" />
-          </button>
-          <button class="ml-1">
-            <img src="../../assets/icons/NextIcon.svg" alt="" />
-          </button>
-        </div>
-      </div>
-
-      <div
-        class="
-          scrollbar-hide
-          min-w-full
-          overflow-x-scroll
-          flex
-          align-center
-          snap-x snap-mandatory
-        "
-      >
-        <div
-          class="
-            mx-2
-            md:mx-5
-            min-w-fit
-            first:ml-7 first:md:ml-28
-            last:mr-7 last:md:mr-28
-          "
-          v-for="movie in adventure"
-          :key="movie.id"
-        >
-          <img
-            class="
-              w-[126px]
-              h-[189px]
-              md:w-[269px] md:h-[403px]
-              rounded-xl
-              md:rounded-[40px]
-            "
-            :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
-            @click="onShowDetail(movie.id)"
-          />
-        </div>
-      </div>
+    <div v-if="movieId !== null ? movieId == 12 : movieId == null">
+      <adventure />
     </div>
 
-    <!-- animation, -->
-    <div
-      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
-      v-if="movieId !== null ? movieId == 16 : movieId == null"
-    >
-      <div class="flex items-end justify-between px-7 md:px-28 mb-6">
-        <h3>Animations</h3>
-        <div class="flex">
-          <button disabled>
-            <img src="../../assets/icons/PrevIcon.svg" alt="" />
-          </button>
-          <button class="ml-1">
-            <img src="../../assets/icons/NextIcon.svg" alt="" />
-          </button>
-        </div>
-      </div>
-
-      <div
-        class="
-          scrollbar-hide
-          min-w-full
-          overflow-x-scroll
-          flex
-          align-center
-          snap-x snap-mandatory
-        "
-      >
-        <div
-          class="
-            mx-2
-            md:mx-5
-            min-w-fit
-            first:ml-7 first:md:ml-28
-            last:mr-7 last:md:mr-28
-          "
-          v-for="movie in animation"
-          :key="movie.id"
-        >
-          <img
-            class="
-              w-[126px]
-              h-[189px]
-              md:w-[269px] md:h-[403px]
-              rounded-xl
-              md:rounded-[40px]
-            "
-            :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
-            @click="onShowDetail(movie.id)"
-          />
-        </div>
-      </div>
+    <div v-if="movieId !== null ? movieId == 16 : movieId == null">
+      <animation />
     </div>
 
-    <!-- comedy, -->
-    <div
-      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
-      v-if="movieId !== null ? movieId == 35 : movieId == null"
-    >
-      <div class="flex items-end justify-between px-7 md:px-28 mb-6">
-        <h3>Comedy</h3>
-        <div class="flex">
-          <button disabled>
-            <img src="../../assets/icons/PrevIcon.svg" alt="" />
-          </button>
-          <button class="ml-1">
-            <img src="../../assets/icons/NextIcon.svg" alt="" />
-          </button>
-        </div>
-      </div>
-
-      <div
-        class="
-          scrollbar-hide
-          min-w-full
-          overflow-x-scroll
-          flex
-          align-center
-          snap-x snap-mandatory
-        "
-      >
-        <div
-          class="
-            mx-2
-            md:mx-5
-            min-w-fit
-            first:ml-7 first:md:ml-28
-            last:mr-7 last:md:mr-28
-          "
-          v-for="movie in comedy"
-          :key="movie.id"
-        >
-          <img
-            class="
-              w-[126px]
-              h-[189px]
-              md:w-[269px] md:h-[403px]
-              rounded-xl
-              md:rounded-[40px]
-            "
-            :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
-            @click="onShowDetail(movie.id)"
-          />
-        </div>
-      </div>
+    <div v-if="movieId !== null ? movieId == 35 : movieId == null">
+      <comdey />
     </div>
 
-    <!-- crime, -->
-    <div
-      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
-      v-if="movieId !== null ? movieId == 80 : movieId == null"
-    >
-      <div class="flex items-end justify-between px-7 md:px-28 mb-6">
-        <h3>Crime</h3>
-        <div class="flex">
-          <button disabled>
-            <img src="../../assets/icons/PrevIcon.svg" alt="" />
-          </button>
-          <button class="ml-1">
-            <img src="../../assets/icons/NextIcon.svg" alt="" />
-          </button>
-        </div>
-      </div>
-      <div
-        class="
-          scrollbar-hide
-          min-w-full
-          overflow-x-scroll
-          flex
-          align-center
-          snap-x snap-mandatory
-        "
-      >
-        <div
-          class="
-            mx-2
-            md:mx-5
-            min-w-fit
-            first:ml-7 first:md:ml-28
-            last:mr-7 last:md:mr-28
-          "
-          v-for="movie in crime"
-          :key="movie.id"
-        >
-          <img
-            class="
-              w-[126px]
-              h-[189px]
-              md:w-[269px] md:h-[403px]
-              rounded-xl
-              md:rounded-[40px]
-            "
-            :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
-            @click="onShowDetail(movie.id)"
-          />
-        </div>
-      </div>
+    <div v-if="movieId !== null ? movieId == 80 : movieId == null">
+      <crime />
     </div>
 
-    <!-- documentary, -->
-    <div
-      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
-      v-if="movieId !== null ? movieId == 99 : movieId == null"
-    >
-      <div class="flex items-end justify-between px-7 md:px-28 mb-6">
-        <h3>Documentary</h3>
-        <div class="flex">
-          <button disabled>
-            <img src="../../assets/icons/PrevIcon.svg" alt="" />
-          </button>
-          <button class="ml-1">
-            <img src="../../assets/icons/NextIcon.svg" alt="" />
-          </button>
-        </div>
-      </div>
-
-      <div
-        class="
-          scrollbar-hide
-          min-w-full
-          overflow-x-scroll
-          flex
-          align-center
-          snap-x snap-mandatory
-        "
-      >
-        <div
-          class="
-            mx-2
-            md:mx-5
-            min-w-fit
-            first:ml-7 first:md:ml-28
-            last:mr-7 last:md:mr-28
-          "
-          v-for="movie in documentary"
-          :key="movie.id"
-        >
-          <img
-            class="
-              w-[126px]
-              h-[189px]
-              md:w-[269px] md:h-[403px]
-              rounded-xl
-              md:rounded-[40px]
-            "
-            :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
-            @click="onShowDetail(movie.id)"
-          />
-        </div>
-      </div>
+    <div v-if="movieId !== null ? movieId == 99 : movieId == null">
+      <documentary />
     </div>
 
-    <!-- drama, -->
-    <div
-      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
-      v-if="movieId !== null ? movieId == 18 : movieId == null"
-    >
-      <div class="flex items-end justify-between px-7 md:px-28 mb-6">
-        <h3>Drama</h3>
-        <div class="flex">
-          <button disabled>
-            <img src="../../assets/icons/PrevIcon.svg" alt="" />
-          </button>
-          <button class="ml-1">
-            <img src="../../assets/icons/NextIcon.svg" alt="" />
-          </button>
-        </div>
-      </div>
-      <div
-        class="
-          scrollbar-hide
-          min-w-full
-          overflow-x-scroll
-          flex
-          align-center
-          snap-x snap-mandatory
-        "
-      >
-        <div
-          class="
-            mx-2
-            md:mx-5
-            min-w-fit
-            first:ml-7 first:md:ml-28
-            last:mr-7 last:md:mr-28
-          "
-          v-for="movie in drama"
-          :key="movie.id"
-        >
-          <img
-            class="
-              w-[126px]
-              h-[189px]
-              md:w-[269px] md:h-[403px]
-              rounded-xl
-              md:rounded-[40px]
-            "
-            :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
-            @click="onShowDetail(movie.id)"
-          />
-        </div>
-      </div>
+    <div v-if="movieId !== null ? movieId == 18 : movieId == null">
+      <drama />
     </div>
 
-    <!-- family, -->
-    <div
-      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
-      v-if="movieId !== null ? movieId == 10751 : movieId == null"
-    >
-      <div class="flex items-end justify-between px-7 md:px-28 mb-6">
-        <h3>Family</h3>
-        <div class="flex">
-          <button disabled>
-            <img src="../../assets/icons/PrevIcon.svg" alt="" />
-          </button>
-          <button class="ml-1">
-            <img src="../../assets/icons/NextIcon.svg" alt="" />
-          </button>
-        </div>
-      </div>
-
-      <div
-        class="
-          scrollbar-hide
-          min-w-full
-          overflow-x-scroll
-          flex
-          align-center
-          snap-x snap-mandatory
-        "
-      >
-        <div
-          class="
-            mx-2
-            md:mx-5
-            min-w-fit
-            first:ml-7 first:md:ml-28
-            last:mr-7 last:md:mr-28
-          "
-          v-for="movie in family"
-          :key="movie.id"
-        >
-          <img
-            class="
-              w-[126px]
-              h-[189px]
-              md:w-[269px] md:h-[403px]
-              rounded-xl
-              md:rounded-[40px]
-            "
-            :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
-            @click="onShowDetail(movie.id)"
-          />
-        </div>
-      </div>
+    <div v-if="movieId !== null ? movieId == 0 : movieId == null">
+      <family />
     </div>
 
-    <!-- fantasy, -->
-    <div
-      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
-      v-if="movieId !== null ? movieId == 14 : movieId == null"
-    >
-      <div class="flex items-end justify-between px-7 md:px-28 mb-6">
-        <h3>Fantasy</h3>
-        <div class="flex">
-          <button disabled>
-            <img src="../../assets/icons/PrevIcon.svg" alt="" />
-          </button>
-          <button class="ml-1">
-            <img src="../../assets/icons/NextIcon.svg" alt="" />
-          </button>
-        </div>
-      </div>
-
-      <div
-        class="
-          scrollbar-hide
-          min-w-full
-          overflow-x-scroll
-          flex
-          align-center
-          snap-x snap-mandatory
-        "
-      >
-        <div
-          class="
-            mx-2
-            md:mx-5
-            min-w-fit
-            first:ml-7 first:md:ml-28
-            last:mr-7 last:md:mr-28
-          "
-          v-for="movie in fantasy"
-          :key="movie.id"
-        >
-          <img
-            class="
-              w-[126px]
-              h-[189px]
-              md:w-[269px] md:h-[403px]
-              rounded-xl
-              md:rounded-[40px]
-            "
-            :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
-            @click="onShowDetail(movie.id)"
-          />
-        </div>
-      </div>
-    </div>
-
-    <!-- history, -->
-    <div
-      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
-      v-if="movieId !== null ? movieId == 36 : movieId == null"
-    >
-      <div class="flex items-end justify-between px-7 md:px-28 mb-6">
-        <h3>History</h3>
-        <div class="flex">
-          <button disabled>
-            <img src="../../assets/icons/PrevIcon.svg" alt="" />
-          </button>
-          <button class="ml-1">
-            <img src="../../assets/icons/NextIcon.svg" alt="" />
-          </button>
-        </div>
-      </div>
-
-      <div
-        class="
-          scrollbar-hide
-          min-w-full
-          overflow-x-scroll
-          flex
-          align-center
-          snap-x snap-mandatory
-        "
-      >
-        <div
-          class="
-            mx-2
-            md:mx-5
-            min-w-fit
-            first:ml-7 first:md:ml-28
-            last:mr-7 last:md:mr-28
-          "
-          v-for="movie in history"
-          :key="movie.id"
-        >
-          <img
-            class="
-              w-[126px]
-              h-[189px]
-              md:w-[269px] md:h-[403px]
-              rounded-xl
-              md:rounded-[40px]
-            "
-            :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
-            @click="onShowDetail(movie.id)"
-          />
-        </div>
-      </div>
-    </div>
-
-    <!-- horor, -->
-    <div
-      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
-      v-if="movieId !== null ? movieId == 27 : movieId == null"
-    >
-      <div class="flex items-end justify-between px-7 md:px-28 mb-6">
-        <h3>Horor</h3>
-        <div class="flex">
-          <button disabled>
-            <img src="../../assets/icons/PrevIcon.svg" alt="" />
-          </button>
-          <button class="ml-1">
-            <img src="../../assets/icons/NextIcon.svg" alt="" />
-          </button>
-        </div>
-      </div>
-
-      <div
-        class="
-          scrollbar-hide
-          min-w-full
-          overflow-x-scroll
-          flex
-          align-center
-          snap-x snap-mandatory
-        "
-      >
-        <div
-          class="
-            mx-2
-            md:mx-5
-            min-w-fit
-            first:ml-7 first:md:ml-28
-            last:mr-7 last:md:mr-28
-          "
-          v-for="movie in horor"
-          :key="movie.id"
-        >
-          <img
-            class="
-              w-[126px]
-              h-[189px]
-              md:w-[269px] md:h-[403px]
-              rounded-xl
-              md:rounded-[40px]
-            "
-            :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
-            @click="onShowDetail(movie.id)"
-          />
-        </div>
-      </div>
+    <div v-if="movieId !== null ? movieId == 0 : movieId == null">
+      <fantasy />
     </div>
   </div>
 </template>
 <script>
-import { ref } from "@vue/reactivity";
-import { onMounted, watch } from "@vue/runtime-core";
-import { getCurrentInstance } from "vue";
 import router from "../../router";
 import axios from "axios";
+import { ref } from "@vue/reactivity";
+import { onMounted, watch } from "@vue/runtime-core";
+
+import BestMovie from "./components/BestMovie.vue";
+import Action from "./components/Action.vue";
+import Adventure from "./components/Adventure.vue";
+import Animation from "./components/Animation.vue";
+import Comdey from "./components/Comdey.vue";
+import Crime from "./components/Crime.vue";
+import Documentary from "./components/Documentary.vue";
+import Drama from "./components/Drama.vue";
+import Family from "./components/Family.vue";
+import Fantasy from "./components/Fantasy.vue";
 
 export default {
-  components: {},
+  components: {
+    BestMovie,
+    Action,
+    Adventure,
+    Animation,
+    Comdey,
+    Crime,
+    Documentary,
+    Drama,
+    Family,
+    Fantasy,
+  },
   setup(props, { root }) {
     const movies = ref([]);
     const tranding = ref([]);
-    const action = ref([]);
-    const adventure = ref([]);
-    const animation = ref([]);
-    const comedy = ref([]);
-    const crime = ref([]);
-    const documentary = ref([]);
-    const drama = ref([]);
-    const family = ref([]);
-    const fantasy = ref([]);
-    const history = ref([]);
-    const horor = ref([]);
-    const music = ref([]);
-    const mistery = ref([]);
-    const romance = ref([]);
-    const popular = ref([]);
 
     const movieId = ref(null);
 
     watch([router.currentRoute], () => {
-      onFetchRecords();
-      console.log("Hallo");
+      movieId.value = router.currentRoute._value.query.id;
     });
 
     onMounted(() => {
@@ -855,19 +257,7 @@ export default {
       }
 
       onFetchRecords();
-      onFetchPopular();
       onFetchTranding();
-      onFetchAction();
-      onFetchAdventure();
-      onFetchAnimation();
-      onFetchComedy();
-      onFetchCrime();
-      onFetchDocumentary();
-      onFetchDrama();
-      onFetchFamily();
-      onFetchFantasy();
-      onFetchHistory();
-      onFetchHoror();
     });
 
     const onShowDetail = (id) => {
@@ -909,177 +299,19 @@ export default {
           .catch((error) => reject(error));
       });
     };
-    const onFetchPopular = () => {
-      return new Promise((resolve, reject) => {
-        axios
-          .get(
-            "https://api.themoviedb.org/3/movie/popular?api_key=30524f455f7dd9239270faa005d68374&language=en-US&page=1"
-          )
-          .then((response) => (popular.value = response.data.results))
 
-          .catch((error) => reject(error));
-      });
-    };
-    const onFetchAction = () => {
-      return new Promise((resolve, reject) => {
-        axios
-          .get(
-            "https://api.themoviedb.org/3/discover/movie?api_key=30524f455f7dd9239270faa005d68374&language=id&with_genres=28"
-          )
-          .then((response) => (action.value = response.data.results))
-
-          .catch((error) => reject(error));
-      });
-    };
-    const onFetchAdventure = () => {
-      return new Promise((resolve, reject) => {
-        axios
-          .get(
-            "https://api.themoviedb.org/3/discover/movie?api_key=30524f455f7dd9239270faa005d68374&language=id&with_genres=12"
-          )
-          .then((response) => (adventure.value = response.data.results))
-
-          .catch((error) => reject(error));
-      });
-    };
-    const onFetchAnimation = () => {
-      return new Promise((resolve, reject) => {
-        axios
-          .get(
-            "https://api.themoviedb.org/3/discover/movie?api_key=30524f455f7dd9239270faa005d68374&language=id&with_genres=16"
-          )
-          .then((response) => (animation.value = response.data.results))
-
-          .catch((error) => reject(error));
-      });
-    };
-    const onFetchComedy = () => {
-      return new Promise((resolve, reject) => {
-        axios
-          .get(
-            "https://api.themoviedb.org/3/discover/movie?api_key=30524f455f7dd9239270faa005d68374&language=id&with_genres=35"
-          )
-          .then((response) => (comedy.value = response.data.results))
-
-          .catch((error) => reject(error));
-      });
-    };
-    const onFetchCrime = () => {
-      return new Promise((resolve, reject) => {
-        axios
-          .get(
-            "https://api.themoviedb.org/3/discover/movie?api_key=30524f455f7dd9239270faa005d68374&language=id&with_genres=80"
-          )
-          .then((response) => (crime.value = response.data.results))
-
-          .catch((error) => reject(error));
-      });
-    };
-    const onFetchDocumentary = () => {
-      return new Promise((resolve, reject) => {
-        axios
-          .get(
-            "https://api.themoviedb.org/3/discover/movie?api_key=30524f455f7dd9239270faa005d68374&language=id&with_genres=99"
-          )
-          .then((response) => (documentary.value = response.data.results))
-
-          .catch((error) => reject(error));
-      });
-    };
-    const onFetchDrama = () => {
-      return new Promise((resolve, reject) => {
-        axios
-          .get(
-            "https://api.themoviedb.org/3/discover/movie?api_key=30524f455f7dd9239270faa005d68374&language=id&with_genres=18"
-          )
-          .then((response) => (drama.value = response.data.results))
-
-          .catch((error) => reject(error));
-      });
-    };
-    const onFetchFamily = () => {
-      return new Promise((resolve, reject) => {
-        axios
-          .get(
-            "https://api.themoviedb.org/3/discover/movie?api_key=30524f455f7dd9239270faa005d68374&language=id&with_genres=10751"
-          )
-          .then((response) => (family.value = response.data.results))
-
-          .catch((error) => reject(error));
-      });
-    };
-    const onFetchFantasy = () => {
-      return new Promise((resolve, reject) => {
-        axios
-          .get(
-            "https://api.themoviedb.org/3/discover/movie?api_key=30524f455f7dd9239270faa005d68374&language=id&with_genres=14"
-          )
-          .then((response) => (fantasy.value = response.data.results))
-
-          .catch((error) => reject(error));
-      });
-    };
-    const onFetchHistory = () => {
-      return new Promise((resolve, reject) => {
-        axios
-          .get(
-            "https://api.themoviedb.org/3/discover/movie?api_key=30524f455f7dd9239270faa005d68374&language=id&with_genres=36"
-          )
-          .then((response) => (history.value = response.data.results))
-
-          .catch((error) => reject(error));
-      });
-    };
-    const onFetchHoror = () => {
-      return new Promise((resolve, reject) => {
-        axios
-          .get(
-            "https://api.themoviedb.org/3/discover/movie?api_key=30524f455f7dd9239270faa005d68374&language=id&with_genres=27"
-          )
-          .then((response) => (horor.value = response.data.results))
-
-          .catch((error) => reject(error));
-      });
-    };
     return {
       //variable
       movieId,
 
       movies,
-      popular,
       tranding,
-      action,
-      adventure,
-      animation,
-      comedy,
-      crime,
-      documentary,
-      drama,
-      family,
-      fantasy,
-      history,
-      horor,
-      music,
-      mistery,
-      romance,
 
       onShowDetail,
       onPlayMovie,
 
       onFetchRecords,
       onFetchTranding,
-      onFetchPopular,
-      onFetchAction,
-      onFetchAdventure,
-      onFetchAnimation,
-      onFetchComedy,
-      onFetchCrime,
-      onFetchDocumentary,
-      onFetchDrama,
-      onFetchFamily,
-      onFetchFantasy,
-      onFetchHistory,
-      onFetchHoror,
     };
   },
 };

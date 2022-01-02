@@ -74,50 +74,8 @@
 </template>
 
 <script>
-import { ref } from "@vue/reactivity";
-import { onMounted } from "@vue/runtime-core";
-
-import axios from "axios";
-
 export default {
   components: {},
-  setup({ root }) {
-    const movies = ref([]);
-
-    onMounted(() => {
-      onFetchRecords();
-    });
-    const onFetchRecords = () => {
-      return new Promise((resolve, reject) => {
-        axios
-          .get(
-            "https://api.themoviedb.org/3/genre/movie/list?api_key=30524f455f7dd9239270faa005d68374&language=en-US&page=1"
-          )
-          .then((response) => (movies.value = response.data.results))
-
-          .catch((error) => reject(error));
-      });
-    };
-
-    const onClickGenre = () => {
-      console.log("Hallo");
-    };
-
-    const onShowListMovie = () => {
-      console.log("Hallo");
-      root.$router.push({
-        name: "list-movie",
-      });
-    };
-    return {
-      //variable
-      movies,
-
-      onFetchRecords,
-      onShowListMovie,
-      onClickGenre,
-    };
-  },
 };
 </script>
 

@@ -37,21 +37,13 @@
           </div>
           <div class="flex flex-col">
             <p
-              class="
-                max-w-[522px]
-                md:max-h-0
-                mb-4
-                mt-4
-                md:mt-0
-                order-last
-                md:order-first
-              "
+              class="max-w-[522px] mb-4 mt-4 md:mt-0 order-last md:order-first"
             >
               {{ detail.overview }}
             </p>
-            <div class="mb-5 opacity-70 text-white text-left">
+            <p class="text-white/70 mb-4 leading-none hidden md:block">
               Actions, Science Fiction
-            </div>
+            </p>
 
             <div class="flex items-center mb-4">
               <span class="mr-6">
@@ -219,23 +211,19 @@
 import { ref } from "@vue/reactivity";
 import { onMounted, watch } from "@vue/runtime-core";
 import axios from "axios";
-import { getCurrentInstance } from "vue";
 import router from "../../router";
 
 export default {
   components: {},
   setup({ root }) {
-    const app = getCurrentInstance();
     const detail = ref([]);
     const credits = ref([]);
     const limitCredits = ref([]);
     const showMore = ref(false);
-    const id = ref(null);
 
     onMounted(() => {
       onShowDetail();
       onFetchCredits();
-      console.log(router.currentRoute._rawValue.query);
     });
 
     watch([router.currentRoute], () => {
