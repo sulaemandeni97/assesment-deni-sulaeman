@@ -1,12 +1,16 @@
 <template>
   <div class="min-h-screen w-full bg-[#0f161d]">
-    <div class="aspect-w-14 aspect-h-7">
-      <iframe
-        src="https://www.youtube.com/embed/r9jwGansp1E?autoplay=1&rel=0"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
+    <div class="h-[195px] md:h-[717px] w-full relative svelte-1nw785w">
+      <div class="h-[195px] md:h-[717px] w-full absolute top-0 z-50">
+        <div class="aspect-w-14 aspect-h-7">
+          <iframe
+            src="https://www.youtube.com/embed/JfVOs4VSpmA?autoplay=1&rel=0"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
     </div>
 
     <div
@@ -120,7 +124,7 @@
           </li>
         </ul>
         <button class="text-white/70 text-[20px] mt-8" @click="onShowMore">
-          {{ showMore == true ? "See More" : "See Less" }}
+          {{ showMore == true ? "See Less" : "See More" }}
         </button>
       </div>
     </div>

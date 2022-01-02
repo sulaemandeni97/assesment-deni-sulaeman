@@ -24,9 +24,9 @@
               mx-4
               text-left
             "
-            @click="onShowDetail"
             v-for="movie in tranding"
             :key="movie.id"
+            @click="onPlayMovie(movie.id)"
           >
             <div
               class="
@@ -139,10 +139,16 @@
               :src="
                 'https://image.tmdb.org/t/p/original/' + movie.backdrop_path
               "
-              class="bg-black rounded"
-              style="max-width: 1237px; max-height: 646px; border-radius: 20px"
+              class="
+                w-[331px]
+                md:w-[1237px]
+                h-[167px]
+                md:h-[646px]
+                rounded-[20px]
+              "
               alt="..."
             />
+            <!-- style="max-width: 1237px; max-height: 646px; border-radius: 20px" -->
           </div>
         </div>
       </div>
@@ -177,13 +183,11 @@
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
         <h3>Best of all</h3>
         <div class="flex">
-          <button class="rotate-90" disabled>
-            <h3>
-              {{ "<" }}
-            </h3>
+          <button disabled>
+            <img src="../../assets/icons/PrevIcon.svg" alt="" />
           </button>
-          <button class="-rotate-90 svelte-1p62w5x">
-            {{ ">" }}
+          <button class="ml-1">
+            <img src="../../assets/icons/NextIcon.svg" alt="" />
           </button>
         </div>
       </div>
@@ -218,6 +222,7 @@
               md:rounded-[40px]
             "
             :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
+            @click="onShowDetail(movie.id)"
           />
         </div>
       </div>
@@ -228,6 +233,14 @@
     <div class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8">
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
         <h3>Actions</h3>
+        <div class="flex">
+          <button disabled>
+            <img src="../../assets/icons/PrevIcon.svg" alt="" />
+          </button>
+          <button class="ml-1">
+            <img src="../../assets/icons/NextIcon.svg" alt="" />
+          </button>
+        </div>
       </div>
 
       <div
@@ -260,7 +273,7 @@
               md:rounded-[40px]
             "
             :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
-            @click="onShowDetail"
+            @click="onShowDetail(movie.id)"
           />
         </div>
       </div>
@@ -270,6 +283,14 @@
     <div class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8">
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
         <h3>Adventure</h3>
+        <div class="flex">
+          <button disabled>
+            <img src="../../assets/icons/PrevIcon.svg" alt="" />
+          </button>
+          <button class="ml-1">
+            <img src="../../assets/icons/NextIcon.svg" alt="" />
+          </button>
+        </div>
       </div>
 
       <div
@@ -302,6 +323,7 @@
               md:rounded-[40px]
             "
             :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
+            @click="onShowDetail(movie.id)"
           />
         </div>
       </div>
@@ -311,6 +333,14 @@
     <div class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8">
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
         <h3>Animations</h3>
+        <div class="flex">
+          <button disabled>
+            <img src="../../assets/icons/PrevIcon.svg" alt="" />
+          </button>
+          <button class="ml-1">
+            <img src="../../assets/icons/NextIcon.svg" alt="" />
+          </button>
+        </div>
       </div>
 
       <div
@@ -343,6 +373,7 @@
               md:rounded-[40px]
             "
             :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
+            @click="onShowDetail(movie.id)"
           />
         </div>
       </div>
@@ -352,6 +383,14 @@
     <div class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8">
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
         <h3>Comedy</h3>
+        <div class="flex">
+          <button disabled>
+            <img src="../../assets/icons/PrevIcon.svg" alt="" />
+          </button>
+          <button class="ml-1">
+            <img src="../../assets/icons/NextIcon.svg" alt="" />
+          </button>
+        </div>
       </div>
 
       <div
@@ -384,6 +423,7 @@
               md:rounded-[40px]
             "
             :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
+            @click="onShowDetail(movie.id)"
           />
         </div>
       </div>
@@ -393,6 +433,14 @@
     <div class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8">
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
         <h3>Crime</h3>
+        <div class="flex">
+          <button disabled>
+            <img src="../../assets/icons/PrevIcon.svg" alt="" />
+          </button>
+          <button class="ml-1">
+            <img src="../../assets/icons/NextIcon.svg" alt="" />
+          </button>
+        </div>
       </div>
       <div
         class="
@@ -424,6 +472,7 @@
               md:rounded-[40px]
             "
             :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
+            @click="onShowDetail(movie.id)"
           />
         </div>
       </div>
@@ -433,6 +482,14 @@
     <div class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8">
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
         <h3>Documentary</h3>
+        <div class="flex">
+          <button disabled>
+            <img src="../../assets/icons/PrevIcon.svg" alt="" />
+          </button>
+          <button class="ml-1">
+            <img src="../../assets/icons/NextIcon.svg" alt="" />
+          </button>
+        </div>
       </div>
 
       <div
@@ -465,6 +522,7 @@
               md:rounded-[40px]
             "
             :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
+            @click="onShowDetail(movie.id)"
           />
         </div>
       </div>
@@ -474,6 +532,14 @@
     <div class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8">
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
         <h3>Drama</h3>
+        <div class="flex">
+          <button disabled>
+            <img src="../../assets/icons/PrevIcon.svg" alt="" />
+          </button>
+          <button class="ml-1">
+            <img src="../../assets/icons/NextIcon.svg" alt="" />
+          </button>
+        </div>
       </div>
       <div
         class="
@@ -505,6 +571,7 @@
               md:rounded-[40px]
             "
             :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
+            @click="onShowDetail(movie.id)"
           />
         </div>
       </div>
@@ -514,6 +581,14 @@
     <div class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8">
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
         <h3>Family</h3>
+        <div class="flex">
+          <button disabled>
+            <img src="../../assets/icons/PrevIcon.svg" alt="" />
+          </button>
+          <button class="ml-1">
+            <img src="../../assets/icons/NextIcon.svg" alt="" />
+          </button>
+        </div>
       </div>
 
       <div
@@ -546,6 +621,7 @@
               md:rounded-[40px]
             "
             :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
+            @click="onShowDetail(movie.id)"
           />
         </div>
       </div>
@@ -555,6 +631,14 @@
     <div class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8">
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
         <h3>Fantasy</h3>
+        <div class="flex">
+          <button disabled>
+            <img src="../../assets/icons/PrevIcon.svg" alt="" />
+          </button>
+          <button class="ml-1">
+            <img src="../../assets/icons/NextIcon.svg" alt="" />
+          </button>
+        </div>
       </div>
 
       <div
@@ -587,6 +671,7 @@
               md:rounded-[40px]
             "
             :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
+            @click="onShowDetail(movie.id)"
           />
         </div>
       </div>
@@ -596,6 +681,14 @@
     <div class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8">
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
         <h3>History</h3>
+        <div class="flex">
+          <button disabled>
+            <img src="../../assets/icons/PrevIcon.svg" alt="" />
+          </button>
+          <button class="ml-1">
+            <img src="../../assets/icons/NextIcon.svg" alt="" />
+          </button>
+        </div>
       </div>
 
       <div
@@ -628,6 +721,7 @@
               md:rounded-[40px]
             "
             :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
+            @click="onShowDetail(movie.id)"
           />
         </div>
       </div>
@@ -637,6 +731,14 @@
     <div class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8">
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
         <h3>Horor</h3>
+        <div class="flex">
+          <button disabled>
+            <img src="../../assets/icons/PrevIcon.svg" alt="" />
+          </button>
+          <button class="ml-1">
+            <img src="../../assets/icons/NextIcon.svg" alt="" />
+          </button>
+        </div>
       </div>
 
       <div
@@ -669,6 +771,7 @@
               md:rounded-[40px]
             "
             :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
+            @click="onShowDetail(movie.id)"
           />
         </div>
       </div>
@@ -679,12 +782,12 @@
 import { ref } from "@vue/reactivity";
 import { onMounted } from "@vue/runtime-core";
 import { getCurrentInstance } from "vue";
-
+import router from "../../router";
 import axios from "axios";
 
 export default {
   components: {},
-  setup({ root }) {
+  setup(props, { root }) {
     const movies = ref([]);
     const tranding = ref([]);
     const action = ref([]);
@@ -722,13 +825,22 @@ export default {
       onFetchHoror();
     });
 
-    const onShowDetail = () => {
-      console.log("Hallo Actions");
-      console.log(root.router);
-      // root.$router.push({
-      //   name: "home",
-      // });
+    const onShowDetail = (id) => {
+      router.push({
+        name: "detail-movie",
+
+        query: { id: id, api_key: "30524f455f7dd9239270faa005d68374" },
+      });
     };
+
+    const onPlayMovie = (id) => {
+      router.push({
+        name: "play-movie",
+
+        query: { id: id, api_key: "30524f455f7dd9239270faa005d68374" },
+      });
+    };
+
     const onFetchRecords = () => {
       return new Promise((resolve, reject) => {
         axios
@@ -905,6 +1017,8 @@ export default {
       romance,
 
       onShowDetail,
+      onPlayMovie,
+
       onFetchRecords,
       onFetchTranding,
       onFetchPopular,
