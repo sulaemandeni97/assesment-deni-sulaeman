@@ -1,7 +1,6 @@
 <template>
   <div class="min-h-screen w-full bg-[#0f161d]">
     <div class="w-full h-screen relative pack-train">
-      <!-- <div className="bg-[url('../../assets/image/cover.svg')]" /> -->
       <img
         src="../assets/images/cover.svg"
         class="object-cover w-full h-full"
@@ -19,13 +18,7 @@
         "
       ></div>
       <div
-        class="
-          absolute
-          bottom-[54px]
-          md:bottom-[140px] md:left-[108px]
-          px-3
-          z-30
-        "
+        class="absolute bottom-[54px] md:bottom-[140px] md:left-[108px] px-3"
       >
         <h1
           class="

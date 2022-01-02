@@ -1,96 +1,6 @@
 <template>
   <div class="min-h-screen w-full bg-[#0f161d]">
     <div class="h-[717px] md:h-[717px] w-full relative">
-      <!-- <img
-        :src="'https://image.tmdb.org/t/p/original/' + detail.backdrop_path"
-        class="bg-black rounded w-full"
-        style="max-height: 717px"
-        alt="..."
-      /> -->
-      <!-- <div
-        class="
-          absolute
-          top-72
-          md:top-44
-          left-4
-          right-4
-          md:left-24
-          text-white
-          z-10
-        "
-      >
-        <h1 class="font-black text-[32px] mb-4">
-          {{ detail.original_title }}
-        </h1>
-        <div class="flex flex-col">
-          <p class="max-w-[522px] mb-4 mt-4 md:mt-0 order-last md:order-first">
-            {{ detail.overview }}
-          </p>
-          <p class="text-white/70 mb-4 leading-none hidden md:block">
-            Actions, Science Fiction
-          </p>
-          <div class="flex items-center mb-4">
-            <span class="mr-6">
-              <img
-                src="../../assets/icons/dolbi-atmos.svg"
-                alt="..."
-                style="height: 19px; viewbox: 0 0 72 19; fill: white"
-                class="text-white"
-              />
-            </span>
-            <img
-              src="../../assets/icons/dolby-atmos-rectangle.svg"
-              alt="..."
-              style="width: 22px; height: 29px; viewbox: 0 0 22 29; fill: white"
-              class="text-white"
-            />
-          </div>
-          <div class="flex align-center text-white/70">
-            <img
-              src="../../assets/icons/star-icon.svg"
-              alt="..."
-              style="height: 19px; viewbox: 0 0 72 19; fill: white"
-              class="text-white"
-            />
-
-            <span class="ml-2"> {{ detail.vote_average }} </span>
-          </div>
-          <div class="flex justify-start mt-5">
-            <router-link to="/play-movie">
-              <button
-                class="
-                  w-full
-                  md:w-auto
-                  px-12
-                  py-2.5
-                  md:py-4
-                  font-bold
-                  text-white
-                  bg-[#FF4244]
-                  rounded-[10px]
-                  text-[24px]
-                  md:text-[32px]
-                  hover:scale-105
-                  active:scale-105
-                  flex
-                  items-center
-                  justify-center
-                "
-                to="/list-movie"
-              >
-                Play Now
-                <span class="ml-4">
-                  <img
-                    src="../../assets/icons/carbon_play-outline.svg"
-                    alt=""
-                  />
-                </span>
-              </button>
-            </router-link>
-          </div>
-        </div>
-      </div> -->
-
       <div class="top-0 left-0 h-full w-screen">
         <div
           class="background-image absolute top-0 left-0 bottom-0 h-full w-full"
@@ -127,7 +37,15 @@
           </div>
           <div class="flex flex-col">
             <p
-              class="max-w-[522px] mb-4 mt-4 md:mt-0 order-last md:order-first"
+              class="
+                max-w-[522px]
+                md:max-h-0
+                mb-4
+                mt-4
+                md:mt-0
+                order-last
+                md:order-first
+              "
             >
               {{ detail.overview }}
             </p>
@@ -218,13 +136,13 @@
       "
     >
       <div class="mb-16">
-        <h2 class="text-[32px] md:text-[42px] font-bold text-left">Credits</h2>
+        <h2 class="text-[32px] md:text-[42px] font-bold text-left z-50">
+          Credits
+        </h2>
         <ul>
           <li
             class="flex items-center mt-4"
-            v-for="credit in showMore == [false] || showMore == false
-              ? credits
-              : credits.splice(0, 5)"
+            v-for="credit in showMore == true ? credits : credits.splice(0, 5)"
             :key="credit.id"
           >
             <div
@@ -269,7 +187,7 @@
           </li>
         </ul>
         <button class="text-white/70 text-[20px] mt-8" @click="onShowMore">
-          {{ showMore == true ? "See More" : "See Less" }}
+          {{ showMore == true ? "See Less" : "See More" }}
         </button>
       </div>
 
@@ -299,7 +217,7 @@
 </template>
 <script>
 import { ref } from "@vue/reactivity";
-import { onMounted } from "@vue/runtime-core";
+import { onMounted, watch } from "@vue/runtime-core";
 import axios from "axios";
 import { getCurrentInstance } from "vue";
 import router from "../../router";
@@ -311,32 +229,23 @@ export default {
     const detail = ref([]);
     const credits = ref([]);
     const limitCredits = ref([]);
-    const showMore = ref([false]);
+    const showMore = ref(false);
     const id = ref(null);
 
     onMounted(() => {
       onShowDetail();
       onFetchCredits();
-      // onFetchCredits();
-      // console.log(window.location.search);
       console.log(router.currentRoute._rawValue.query);
+    });
+
+    watch([router.currentRoute], () => {
+      onShowDetail();
+      onFetchCredits();
     });
 
     const onShowMore = () => {
       showMore.value = !showMore.value;
     };
-
-    // const onShowDetail = () => {
-    //   return new Promise((resolve, reject) => {
-    //     axios
-    //       .get(
-    //         "https://api.themoviedb.org/3/movie/634649?api_key=30524f455f7dd9239270faa005d68374"
-    //       )
-    //       .then((response) => (detail.value = response.data))
-
-    //       .catch((error) => reject(error));
-    //   });
-    // };
 
     const onShowDetail = (id, key) => {
       return new Promise((resolve, reject) => {
@@ -385,7 +294,6 @@ export default {
 
 <style>
 .background-image {
-  /* background: linear-gradient(180deg, rgba(15, 22, 29, 0.29) 0%, #0f161d 100%); */
   background: linear-gradient(180deg, rgba(15, 22, 29, 0.29) 0%, #0f161d 100%);
 }
 </style>

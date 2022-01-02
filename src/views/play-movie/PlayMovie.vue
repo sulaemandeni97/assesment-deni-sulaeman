@@ -124,7 +124,7 @@
           </li>
         </ul>
         <button class="text-white/70 text-[20px] mt-8" @click="onShowMore">
-          {{ showMore == true ? "See Less" : "See More" }}
+          {{ showMore == true ? "See More" : "See Less" }}
         </button>
       </div>
     </div>

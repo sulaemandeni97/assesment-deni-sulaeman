@@ -1,176 +1,173 @@
 <template>
-  <div class="bg-[#0f161d]">
-    <div class="w-full">
-      <div class="pt-24 md:pt-26">
+  <div class="bg-[#0f161d] w-full min-h-screen">
+    <div class="pt-24 md:pt-26">
+      <div
+        class="
+          scrollbar-hide
+          min-w-full
+          overflow-x-scroll
+          flex
+          align-center
+          snap-x snap-mandatory
+        "
+      >
         <div
           class="
-            scrollbar-hide
-            min-w-full
-            overflow-x-scroll
-            flex
-            align-center
-            snap-x snap-mandatory
+            relative
+            snap-center
+            items
+            first:ml-7 first:md:ml-28
+            last:mr-7 last:md:mr-28
+            rounded-[20px]
+            flex-shrink-0
+            mx-4
+            text-left
           "
+          v-for="movie in tranding"
+          :key="movie.id"
+          @click="onPlayMovie(movie.id)"
         >
           <div
             class="
-              relative
-              snap-center
-              items
-              first:ml-7 first:md:ml-28
-              last:mr-7 last:md:mr-28
-              rounded-[20px]
-              flex-shrink-0
-              mx-4
-              text-left
+              hidden
+              md:block
+              absolute
+              text-white
+              bottom-16
+              left-16
+              z-20
+              border-b-1
             "
-            v-for="movie in tranding"
-            :key="movie.id"
-            @click="onPlayMovie(movie.id)"
           >
-            <div
-              class="
-                hidden
-                md:block
-                absolute
-                text-white
-                bottom-16
-                left-16
-                z-20
-                border-b-1
-              "
-            >
-              <h1 class="font-black text-[32px] mb-4 font-title">
-                {{ movie.original_title }}
-              </h1>
-              <div class="flex flex-col">
-                <p
-                  class="
-                    max-w-[522px]
-                    mb-4
-                    mt-4
-                    md:mt-0
-                    order-last
-                    md:order-first
-                  "
-                >
-                  {{ movie.overview }}
-                </p>
-                <p class="text-white/70 mb-4 leading-none hidden md:block">
-                  Adventure, Actions, Fantasy
-                </p>
+            <h1 class="font-black text-[32px] mb-4 font-title">
+              {{ movie.original_title }}
+            </h1>
+            <div class="flex flex-col">
+              <p
+                class="
+                  max-w-[522px]
+                  mb-4
+                  mt-4
+                  md:mt-0
+                  order-last
+                  md:order-first
+                "
+              >
+                {{ movie.overview }}
+              </p>
+              <p class="text-white/70 mb-4 leading-none hidden md:block">
+                Adventure, Actions, Fantasy
+              </p>
 
-                <div class="flex items-center mb-4">
-                  <span class="mr-6">
-                    <img
-                      src="../../assets/icons/dolbi-atmos.svg"
-                      alt="..."
-                      style="
-                        width: 72px;
-                        height: 19px;
-                        viewbox: 0 0 72 19;
-                        fill: white;
-                      "
-                      class="text-white"
-                    />
-                  </span>
+              <div class="flex items-center mb-4">
+                <span class="mr-6">
                   <img
-                    src="../../assets/icons/dolby-atmos-rectangle.svg"
+                    src="../../assets/icons/dolbi-atmos.svg"
                     alt="..."
                     style="
-                      width: 22px;
-                      height: 29px;
-                      viewbox: 0 0 22 29;
+                      width: 72px;
+                      height: 19px;
+                      viewbox: 0 0 72 19;
                       fill: white;
                     "
                     class="text-white"
                   />
-                </div>
-              </div>
-
-              <div class="pt-9">
-                <button
-                  class="
-                    w-full
-                    md:w-auto
-                    px-12
-                    py-2.5
-                    md:py-4
-                    font-bold
-                    text-white
-                    bg-[#FF4244]
-                    rounded-[10px]
-                    text-[24px]
-                    md:text-[32px]
-                    hover:scale-105
-                    active:scale-105
-                    flex
-                    items-center
-                    justify-center
-                    z-20
+                </span>
+                <img
+                  src="../../assets/icons/dolby-atmos-rectangle.svg"
+                  alt="..."
+                  style="
+                    width: 22px;
+                    height: 29px;
+                    viewbox: 0 0 22 29;
+                    fill: white;
                   "
-                >
-                  <router-link to="/detail-movie"> Watch Now</router-link>
-
-                  <span class="ml-4">
-                    <router-link to="/detail-movie">
-                      <img
-                        src="../../assets/icons/carbon_play-outline.svg"
-                        alt=""
-                      />
-                    </router-link>
-                  </span>
-                </button>
+                  class="text-white"
+                />
               </div>
             </div>
 
-            <div
-              class="
-                background-image
-                absolute
-                top-0
-                left-0
-                h-full
-                w-full
-                rounded-[20px]
-              "
-            ></div>
-            <img
-              :src="
-                'https://image.tmdb.org/t/p/original/' + movie.backdrop_path
-              "
-              class="
-                w-[331px]
-                md:w-[1237px]
-                h-[167px]
-                md:h-[646px]
-                rounded-[20px]
-              "
-              alt="..."
-            />
-            <!-- style="max-width: 1237px; max-height: 646px; border-radius: 20px" -->
+            <div class="pt-9">
+              <button
+                class="
+                  w-full
+                  md:w-auto
+                  px-12
+                  py-2.5
+                  md:py-4
+                  font-bold
+                  text-white
+                  bg-[#FF4244]
+                  rounded-[10px]
+                  text-[24px]
+                  md:text-[32px]
+                  hover:scale-105
+                  active:scale-105
+                  flex
+                  items-center
+                  justify-center
+                  z-20
+                "
+              >
+                <router-link to="/detail-movie"> Watch Now</router-link>
+
+                <span class="ml-4">
+                  <router-link to="/detail-movie">
+                    <img
+                      src="../../assets/icons/carbon_play-outline.svg"
+                      alt=""
+                    />
+                  </router-link>
+                </span>
+              </button>
+            </div>
           </div>
+
+          <div
+            class="
+              background-image
+              absolute
+              top-0
+              left-0
+              h-full
+              w-full
+              rounded-[20px]
+            "
+          ></div>
+          <img
+            :src="'https://image.tmdb.org/t/p/original/' + movie.backdrop_path"
+            class="
+              w-[331px]
+              md:w-[1237px]
+              h-[167px]
+              md:h-[646px]
+              rounded-[20px]
+            "
+            alt="..."
+          />
+          <!-- style="max-width: 1237px; max-height: 646px; border-radius: 20px" -->
         </div>
       </div>
-
-      <div class="w-full flex items-center justify-center mt-4 mb-4">
-        <button
-          aria-label="Carousel Navigation"
-          class="bg-white rounded-full mx-1 h-3 w-3 transition ease-out"
-          disabled
-        />
-        <button
-          aria-label="Carousel Navigation"
-          class="bg-white rounded-full mx-1 h-2.5 w-2.5 transition ease-out"
-          disabled
-        />
-        <button
-          aria-label="Carousel Navigation"
-          class="bg-white rounded-full mx-1 h-2 w-2 transition ease-out"
-          disabled
-        />
-      </div>
     </div>
+
+    <div class="w-full flex items-center justify-center mt-4 mb-4">
+      <button
+        aria-label="Carousel Navigation"
+        class="bg-white rounded-full mx-1 h-3 w-3 transition ease-out"
+        disabled
+      />
+      <button
+        aria-label="Carousel Navigation"
+        class="bg-white rounded-full mx-1 h-2.5 w-2.5 transition ease-out"
+        disabled
+      />
+      <button
+        aria-label="Carousel Navigation"
+        class="bg-white rounded-full mx-1 h-2 w-2 transition ease-out"
+        disabled
+      />
+    </div>
+
     <!-- <div class="flex flex-wrap justify-center mb-10 pt-20">
       <img
         src="../../assets/images/preview1.png"
@@ -179,7 +176,10 @@
         alt="..."
       />
     </div> -->
-    <div class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8">
+    <div
+      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
+      v-if="movieId !== null ? movieId == 0 : movieId == null"
+    >
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
         <h3>Best of all</h3>
         <div class="flex">
@@ -230,9 +230,12 @@
 
     <!-- Image 2 -->
 
-    <div class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8">
+    <div
+      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
+      v-if="movieId !== null ? movieId == 28 : movieId == null"
+    >
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
-        <h3>Actions</h3>
+        <h3>Action</h3>
         <div class="flex">
           <button disabled>
             <img src="../../assets/icons/PrevIcon.svg" alt="" />
@@ -280,7 +283,10 @@
     </div>
 
     <!-- adventure, -->
-    <div class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8">
+    <div
+      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
+      v-if="movieId !== null ? movieId == 12 : movieId == null"
+    >
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
         <h3>Adventure</h3>
         <div class="flex">
@@ -330,7 +336,10 @@
     </div>
 
     <!-- animation, -->
-    <div class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8">
+    <div
+      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
+      v-if="movieId !== null ? movieId == 16 : movieId == null"
+    >
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
         <h3>Animations</h3>
         <div class="flex">
@@ -380,7 +389,10 @@
     </div>
 
     <!-- comedy, -->
-    <div class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8">
+    <div
+      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
+      v-if="movieId !== null ? movieId == 35 : movieId == null"
+    >
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
         <h3>Comedy</h3>
         <div class="flex">
@@ -430,7 +442,10 @@
     </div>
 
     <!-- crime, -->
-    <div class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8">
+    <div
+      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
+      v-if="movieId !== null ? movieId == 80 : movieId == null"
+    >
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
         <h3>Crime</h3>
         <div class="flex">
@@ -479,7 +494,10 @@
     </div>
 
     <!-- documentary, -->
-    <div class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8">
+    <div
+      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
+      v-if="movieId !== null ? movieId == 99 : movieId == null"
+    >
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
         <h3>Documentary</h3>
         <div class="flex">
@@ -529,7 +547,10 @@
     </div>
 
     <!-- drama, -->
-    <div class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8">
+    <div
+      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
+      v-if="movieId !== null ? movieId == 18 : movieId == null"
+    >
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
         <h3>Drama</h3>
         <div class="flex">
@@ -578,7 +599,10 @@
     </div>
 
     <!-- family, -->
-    <div class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8">
+    <div
+      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
+      v-if="movieId !== null ? movieId == 10751 : movieId == null"
+    >
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
         <h3>Family</h3>
         <div class="flex">
@@ -628,7 +652,10 @@
     </div>
 
     <!-- fantasy, -->
-    <div class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8">
+    <div
+      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
+      v-if="movieId !== null ? movieId == 14 : movieId == null"
+    >
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
         <h3>Fantasy</h3>
         <div class="flex">
@@ -678,7 +705,10 @@
     </div>
 
     <!-- history, -->
-    <div class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8">
+    <div
+      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
+      v-if="movieId !== null ? movieId == 36 : movieId == null"
+    >
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
         <h3>History</h3>
         <div class="flex">
@@ -728,7 +758,10 @@
     </div>
 
     <!-- horor, -->
-    <div class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8">
+    <div
+      class="text-white text-[24px] md:text-[42px] font-bold py-2.5 md:py-8"
+      v-if="movieId !== null ? movieId == 27 : movieId == null"
+    >
       <div class="flex items-end justify-between px-7 md:px-28 mb-6">
         <h3>Horor</h3>
         <div class="flex">
@@ -780,7 +813,7 @@
 </template>
 <script>
 import { ref } from "@vue/reactivity";
-import { onMounted } from "@vue/runtime-core";
+import { onMounted, watch } from "@vue/runtime-core";
 import { getCurrentInstance } from "vue";
 import router from "../../router";
 import axios from "axios";
@@ -806,9 +839,21 @@ export default {
     const romance = ref([]);
     const popular = ref([]);
 
-    const app = getCurrentInstance();
+    const movieId = ref(null);
+
+    watch([router.currentRoute], () => {
+      onFetchRecords();
+      console.log("Hallo");
+    });
 
     onMounted(() => {
+      let id = router.currentRoute._value.query.id;
+      if (id) {
+        movieId.value = id;
+      } else {
+        movieId.value == null;
+      }
+
       onFetchRecords();
       onFetchPopular();
       onFetchTranding();
@@ -998,6 +1043,8 @@ export default {
     };
     return {
       //variable
+      movieId,
+
       movies,
       popular,
       tranding,
