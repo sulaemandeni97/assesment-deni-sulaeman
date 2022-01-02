@@ -189,7 +189,7 @@
           </span>
           <div @click="onSearch" class="cursor-pointer">Search</div>
         </div>
-        <router-link class="py-6" to="/list-movie">View Plans</router-link>
+        <div class="py-6">View Plans</div>
       </div>
       <div class="hidden md:flex align-center items-center">
         <select

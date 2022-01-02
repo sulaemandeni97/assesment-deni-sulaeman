@@ -82,10 +82,19 @@ export default {
       });
     };
 
+    const onShowDetail = (id) => {
+      router.push({
+        name: "detail-movie",
+
+        query: { id: id, api_key: "30524f455f7dd9239270faa005d68374" },
+      });
+    };
+
     return {
       adventures,
 
       onFetchAdventure,
+      onShowDetail,
     };
   },
 };
