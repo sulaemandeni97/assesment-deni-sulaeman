@@ -122,31 +122,29 @@
               class="
                 h-10
                 w-8
-                bg-background
+                bg-[#0f161d]
                 rotate-45
                 transform
                 origin-bottom-left
               "
             ></div>
           </div>
-          <div
-            class="hidden group-hover:block hover:block absolute top-16 z-30"
-          >
+          <div class="hidden group-hover:block hover:block absolute top-16">
             <div
               class="
-                fixed
-                h-full
-                w-full
-                left-0
-                top-0
-                bg-background/95
-                overflow-y-scroll overflow-x-hidden
+                bg-[#0f161d]
+                rounded-2xl
+                w-48
+                shadow-xl
+                overflow-y-scroll
+                max-h-[250px]
+                scrollbar-hide
               "
             >
               <div>
-                <ul>
+                <ul class="text-left">
                   <li
-                    class="w-full py-2 text-[20px]"
+                    class="w-full py-3 px-7 text-[20px]"
                     v-for="genre in genres"
                     :key="genre.id"
                     @click="onShowMovie(genre.id)"
@@ -232,7 +230,7 @@
           w-full
           left-0
           top-0
-          bg-background/95
+          bg-[#0f161d]
           overflow-y-scroll overflow-x-hidden
         "
       >
