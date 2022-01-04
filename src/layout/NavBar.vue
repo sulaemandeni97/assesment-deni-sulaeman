@@ -1,22 +1,7 @@
 <template lang="">
   <div class="bg-[#0f161d]">
     <div
-      class="
-        fixed
-        top-0
-        left-0
-        flex
-        align-center
-        z-50
-        w-full
-        h-[69px]
-        px-7
-        md:px-28
-        text-white
-        justify-between
-        default-bg-gradient
-        backdrop-blur-[5px]
-      "
+      class="fixed top-0 left-0 flex align-center z-50 w-full h-[69px] px-7 md:px-28 text-white justify-between default-bg-gradient backdrop-blur-[5px]"
     >
       <div class="flex justify-start">
         <router-link to="/">
@@ -30,14 +15,7 @@
         <div class="hidden md:flex" v-if="isSearch == true">
           <form>
             <div
-              class="
-                flex
-                w-full
-                align-center
-                items-center
-                my-6
-                md:my-3 md:ml-9 md:text-white/50
-              "
+              class="flex w-full align-center items-center my-6 md:my-3 md:ml-9 md:text-white/50"
             >
               <div class="relative md:ml-2 mx-auto flex items-center">
                 <input
@@ -45,42 +23,12 @@
                   v-model="search"
                   @keyup.enter="onPlayMovie"
                   placeholder="Try Search On Ward"
-                  class="
-                    absolute
-                    bg-transparent
-                    border-0
-                    outline-none
-                    text-background
-                    rounded rounded-r-none
-                    w-64
-                    md:w-128
-                    px-4
-                    py-2
-                    md:text-white
-                    italic
-                    md:font-normal
-                    font-medium
-                    placeholder:italic placeholder:font-medium
-                    md:placeholder:font-normal
-                  "
+                  class="absolute bg-transparent border-0 outline-none text-background rounded rounded-r-none w-64 md:w-128 px-4 py-2 md:text-white italic md:font-normal font-medium placeholder:italic placeholder:font-medium md:placeholder:font-normal"
                 />
 
                 <input
                   v-model="resultSearch.original_title"
-                  class="
-                    bg-white
-                    md:bg-transparent
-                    rounded rounded-r-none
-                    w-64
-                    md:w-128
-                    px-4
-                    py-2
-                    text-background/50
-                    md:text-white/50
-                    italic
-                    font-medium
-                    md:font-normal
-                  "
+                  class="bg-white md:bg-transparent rounded rounded-r-none w-64 md:w-128 px-4 py-2 text-background/50 md:text-white/50 italic font-medium md:font-normal"
                 />
               </div>
             </div>
@@ -93,53 +41,19 @@
         v-if="isSearch == false"
       >
         <div
-          class="
-            group
-            text-center
-            h-full
-            flex
-            items-center
-            align-center
-            flex-col
-            py-6
-            relative
-            cursor-pointer
-          "
+          class="group text-center h-full flex items-center align-center flex-col py-6 relative cursor-pointer"
         >
           <div class="h-full">All Genre</div>
           <div
-            class="
-              hidden
-              group-hover:inline-block
-              w-12
-              overflow-hidden
-              absolute
-              top-8
-              mt-2
-            "
+            class="hidden group-hover:inline-block w-12 overflow-hidden absolute top-8 mt-2"
           >
             <div
-              class="
-                h-10
-                w-8
-                bg-[#0f161d]
-                rotate-45
-                transform
-                origin-bottom-left
-              "
+              class="h-10 w-8 bg-[#0f161d] rotate-45 transform origin-bottom-left"
             ></div>
           </div>
           <div class="hidden group-hover:block hover:block absolute top-16">
             <div
-              class="
-                bg-[#0f161d]
-                rounded-2xl
-                w-48
-                shadow-xl
-                overflow-y-scroll
-                max-h-[250px]
-                scrollbar-hide
-              "
+              class="bg-[#0f161d] rounded-2xl w-48 shadow-xl overflow-y-scroll max-h-[250px] scrollbar-hide"
             >
               <div>
                 <ul class="text-left">
@@ -157,25 +71,10 @@
           </div>
 
           <div
-            class="
-              hidden
-              group-hover:inline-block
-              w-12
-              overflow-hidden
-              absolute
-              top-8
-              mt-2
-            "
+            class="hidden group-hover:inline-block w-12 overflow-hidden absolute top-8 mt-2"
           >
             <div
-              class="
-                h-8
-                w-8
-                bg-[#0f161d]
-                rotate-45
-                transform
-                origin-bottom-left
-              "
+              class="h-8 w-8 bg-[#0f161d] rotate-45 transform origin-bottom-left"
             ></div>
           </div>
         </div>
@@ -211,29 +110,10 @@
     </div>
 
     <div
-      class="
-        fixed
-        h-full
-        w-full
-        left-0
-        top-0
-        bg-[#0f161d]/95
-        overflow-y-scroll overflow-x-hidden
-        z-50
-      "
+      class="fixed h-full w-full left-0 top-0 bg-[#0f161d]/95 overflow-y-scroll overflow-x-hidden z-50"
       v-if="navMenu == true"
     >
-      <div
-        class="
-          fixed
-          h-full
-          w-full
-          left-0
-          top-0
-          bg-[#0f161d]
-          overflow-y-scroll overflow-x-hidden
-        "
-      >
+      <div class="fixed h-full w-full left-0 top-0">
         <div class="flex w-full flex-row-reverse p-7">
           <button @click="onNavMenu">
             <span>
@@ -244,14 +124,7 @@
         <div class="mt-24 px-4 flex flex-col text-white">
           <form action="">
             <div
-              class="
-                flex
-                w-full
-                align-center
-                items-center
-                my-6
-                md:my-3 md:ml-9 md:text-white/50
-              "
+              class="flex w-full align-center items-center my-6 md:my-3 md:ml-9 md:text-white/50"
             >
               <div class="relative md:ml-2 mx-auto flex items-center text-left">
                 <input
@@ -259,53 +132,16 @@
                   @keyup.enter="onPlayMovie"
                   type="text"
                   placeholder="Try Search On Ward"
-                  class="
-                    absolute
-                    bg-transparent
-                    border-0
-                    outline-none
-                    text-background text-black
-                    rounded rounded-r-none
-                    w-64
-                    md:w-128
-                    px-4
-                    py-2
-                    md:text-white
-                    italic
-                    md:font-normal
-                    font-medium
-                    placeholder:italic placeholder:font-medium
-                    md:placeholder:font-normal
-                  "
+                  class="absolute bg-transparent border-0 outline-none text-background text-black rounded rounded-r-none w-64 md:w-128 px-4 py-2 md:text-white italic md:font-normal font-medium placeholder:italic placeholder:font-medium md:placeholder:font-normal"
                 />
                 <input
                   type="text"
                   v-model="resultSearch.original_title"
                   disabled
-                  class="
-                    bg-white
-                    md:bg-transparent
-                    rounded rounded-r-none
-                    w-64
-                    md:w-128
-                    px-4
-                    py-2
-                    text-black/50
-                    md:text-white/50
-                    italic
-                    font-medium
-                    md:font-normal
-                  "
+                  class="bg-white md:bg-transparent rounded rounded-r-none w-64 md:w-128 px-4 py-2 text-black/50 md:text-white/50 italic font-medium md:font-normal"
                 />
                 <div
-                  class="
-                    bg-white
-                    text-[#C4C4C4]
-                    px-4
-                    py-2.5
-                    z-50
-                    rounded rounded-l-none
-                  "
+                  class="bg-white text-[#C4C4C4] px-4 py-2.5 z-50 rounded rounded-l-none"
                 >
                   <span>
                     <img src="../assets/icons/searchIcon.svg" alt="" />
